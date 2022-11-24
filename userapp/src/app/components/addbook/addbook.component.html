@@ -1,0 +1,95 @@
+<div class="bootstrap-wrapper big-banner text-light full-height">
+  <div class="container col-md-7 margin-t text-center text-light full-height">
+
+
+    <div style="margin-top: 25px;" class="container col-md-7 margin-t text-center text-light ">
+      <h1>Add or Update book</h1>
+<h3 style="color:red;">(Please note: If you are updating book, you need to re-select logo.)</h3>
+
+      <form ngNativeValidate #addbookform="ngForm" (ngSubmit)="saveBook()">
+        <!-- {{course | json}} -->
+        <div class="form-group  container col-md-5">
+
+          <label for="logo">Logo &nbsp;</label>
+          <input type="file" (change)="onFileChanged($event)">
+          <!-- <img *ngIf="book.logo" src="{{book.logo}}" height="100" width="100"> -->
+          <img [src]="imgURL" height="50" width="50" *ngIf="imgURL">
+        </div>
+
+        <!-- <div class="form-group container col-md-5">
+      <label for="authorId">Book Id</label>
+      <input type="text" class="form-control" [(ngModel)]="book.authorId" name="authorId" required>
+    </div> -->
+        <div class="form-group container col-md-5">
+          <label for="author">Author name</label>
+          <input type="text" class="form-control" required [(ngModel)]="book.author" name="author">
+        </div>
+        <div class="form-group container col-md-5">
+          <label for="bookTitle">Book name</label>
+          <input type="text" class="form-control" required [(ngModel)]="book.bookTitle" name="bookTitle"
+            value="{{book.bookTitle}}">
+        </div>
+        <div class="form-group container col-md-5">
+          <label for="category">Book Category</label>
+          <input type="text" class="form-control" required [(ngModel)]="book.category" name="category">
+        </div>
+        <div class="form-group container col-md-5">
+          <label for="publisher">Publisher</label>
+          <input type="text" class="form-control" required [(ngModel)]="book.publisher" name="publisher">
+        </div>
+        <!--     
+    <div class="form-group container col-md-5">
+      <label for="publishedDate">Published Date</label>
+      <input type="text" class="form-control" required [(ngModel)]="book.publishedDate" name="publishedDate">
+    </div> -->
+        <!-- <div class="form-group container col-md-5">
+      <label for="status">Status</label>
+      <input type="text" class="form-control" required [(ngModel)]="book.status" name="status">
+    </div> -->
+        <div class="form-group container col-md-5">
+          <label for="price">Price</label>
+          <input type="text" class="form-control" required [(ngModel)]="book.price" name="price">
+        </div>
+        <div class="form-group container col-md-5">
+          <label for="chapter">Chapter</label>
+          <input type="text" class="form-control" required [(ngModel)]="book.chapter" name="chapter">
+        </div>
+        <div class="form-group container col-md-5">
+          <mat-radio-group>
+            <mat-radio-button name="active" [checked]="book.active ===true" style="margin-top: 10px;" ngDefaultControl
+              [(ngModel)]="book.active" value="True">Active</mat-radio-button>
+            <mat-radio-button name="inactive" ngDefaultControl [checked]="book.active ===false"
+              [(ngModel)]="book.active" value="False">Inactive</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <div class="form-group container col-md-5" style="margin-top: 10px;">
+          Published Date: <input type="date" [(ngModel)]="book.publishedDate" name="publishedDate"
+            value="publishedDate">
+        </div>
+        <!-- <div class="form-group" style="margin-top: 10px;" >
+      <label>
+         <input type="radio" ng-Model="book.active" value="true">True</label>
+<label><input type="radio" ng-Model="book.active" value="false">False</label>
+    
+      </div> -->
+
+        <!-- <div style="margin-top: 5px;" class="form-group container col-md-10">
+      <mat-form-field appearance="fill">
+        <mat-label >Published date</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div> -->
+        <button type="submit" class="btn btn-success margin-t">Submit</button>
+        <button type="submit" style="margin-left: 5px;" class="btn btn-secondary margin-t"
+          (click)="gotoHome()">Back</button>
+      </form>
+    </div>
+  </div>
+  <footer style="color:black" class="footer bg-secondary fixed-bottom">
+    
+    <p style="text-align:center;">@Copyright 2022-23. All rights reserved. </p>
+  
+    </footer>

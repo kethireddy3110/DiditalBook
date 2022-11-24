@@ -1,0 +1,11 @@
+package com.Day8DepartmentService.repo;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.Day8DepartmentService.model.Department;
+
+public interface DeptRepository extends JpaRepository<Department, Long>  {
+	
+	public Department findDepartmentByID(Long deptId);
+
+}

@@ -1,0 +1,33 @@
+package com.Day8DepartmentService.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.Day8DepartmentService.model.Department;
+import com.Day8DepartmentService.repo.DeptRepository;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Service
+@Slf4j
+public class DepartService {
+
+	@Autowired
+	private DeptRepository deptRepo;
+
+	public Department saveDepartment(Department department) {
+
+		log.info("Logging department service- save");
+
+		return deptRepo.save(department);
+
+	}
+
+	public Department findDepartmentByID(Long deptId) {
+
+		log.info("Logging department service- find");
+		return deptRepo.findDepartmentByID(deptId);
+
+	}
+
+}

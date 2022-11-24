@@ -1,0 +1,45 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.text-center{
+
+  text-align: center;
+}
+
+.margin-t{
+
+  margin-top: 22px;
+}
+
+.margin-l{
+
+  margin-left: 10px;
+}
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}
+img:hover {
+  cursor: pointer;
+}
+
+.big-banner{
+  background-image: url('/assets/background3.jpg');
+  /* background-size: 100%; */
+  background-size: 100% 100%;
+  /* background-position: center center; */
+  background-repeat: no-repeat;
+  /* text-align:center; */
+    /* margin:auto; */
+  /* padding:0; */
+
+ 
+  top:0px;
+  left:0px;
+}
+.full-height{
+height: 100vh;
+width: 100vw
+}

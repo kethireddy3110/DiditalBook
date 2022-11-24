@@ -1,0 +1,33 @@
+<mat-toolbar style="margin-bottom: -25px;" color="primary">  
+<span>   
+<a mat-icon-button routerLink="/"> Digital Book <img style="width:30px" src="../assets/Home.jfif" alt="Home">
+  
+</a>
+
+</span>
+  
+<span class="example-spacer"></span>
+  
+  <a *ngIf="loggedIn && userRole=='AUTHOR'" routerLink="/addbook" style="margin-right: 5px; text-decoration: none;"> <button *ngIf="loggedIn && userRole=='AUTHOR'" routerLink="/addbook" style="margin-right: 5px;" mat-mini-fab color="warn" aria-label="Example icon button with a plus one icon" >
+    <mat-icon>plus_one</mat-icon>
+  </button> Add book</a>
+  <a style="text-decoration: none;" *ngIf="!loggedIn" matt-icon-button routerLink="/login">Login &nbsp;</a>
+
+<a *ngIf="user" style="margin-right: 5px; text-decoration: none;" routerLink="/viewAllBooks">
+  <!-- <div class="example-button-container"> -->
+    <button style="margin-right: 5px;" mat-mini-fab color="warn" routerLink="/viewAllBooks" aria-label="Example icon button with a filter list icon" >
+      <mat-icon>filter_list</mat-icon>
+    </button>
+  <!-- </div> -->
+  <!-- <img style="width:30px; margin-top: 5px;" src="../assets/MyBooks.jfif" alt="myBooks" > -->
+  My books &nbsp;</a>
+
+
+<a *ngIf="user" style="color: rgb(252, 69, 3);"><img style="width:30px; margin-top: 5px;" src="../assets/Profile.png" alt="logout">&nbsp;{{user}}</a>
+
+
+<a style="text-decoration: none;" *ngIf="!loggedIn" matt-icon-button routerLink="/register">Register</a>
+
+
+<a  *ngIf="loggedIn" (click)="logoutUser()" matt-icon-button style="margin-left: 10px; text-decoration: none; " class="pointer"><img style="width:30px; margin-top: 5px; margin-right: 5px;" src="../assets/Logout.png" alt="logout"> &nbsp;Logout</a>
+</mat-toolbar>

@@ -1,0 +1,43 @@
+<div class="bootstrap-wrapper big-banner text-light full-height">
+    <div style="margin-top: 25px;" class="container col-md-7 margin-t text-center text-light ">
+<div class="container">
+  <h2> Available Books</h2>
+  <!-- <p style="color: red;"> All books based on search</p> -->
+  <table class="table text-light"> 
+  <thead class="thead-dark"> </thead>
+  <tr>
+  <th>Book Id</th>
+  <th>Book name</th>
+  <th>Author</th>
+  <th>Publisher</th>
+  </tr>
+  <tbody>  
+  <tr *ngIf="allBooks.length==0">
+  <td colspan="5" style="text-align:center"><h2> No books yet!!</h2>
+  </td>
+  </tr>
+  <tr *ngFor="let book of allBooks"> 
+    <td>  {{book.authorId}}</td>
+    <td>  {{book.bookTitle}}</td>
+    <td>  {{book.author}}</td>
+    <td>  {{book.publisher}}</td>
+  <td>
+    <button *ngIf="loggedIn && (userRole=='AUTHOR' || userRole=='READER')" type="button" class="btn btn-secondary" (click)="goToViewBook(book.authorId)"> Read &nbsp; </button>
+
+    <button *ngIf="userRole=='READER'" type="button" style="margin-left: 5px;" class="btn btn-secondary" (click)="subscribeBook(book.authorId)">Subscribe</button>
+
+    <button *ngIf="userRole=='READER'" type="button" style="margin-left: 5px;" class="btn btn-secondary" (click)="unSubscribeBook(book.authorId)">Unsubscribe</button>
+
+    <button *ngIf="loggedIn && userRole=='AUTHOR'" type="button" style="margin-left: 5px;" class="btn btn-secondary" (click)="updateBook(book.authorId)">Update</button>
+  </td>
+  </tr>
+  </tbody>
+  </table>
+  <button type="button" class="btn btn-success" (click)="goToAddBook()">Back &nbsp; </button>
+  </div>
+    </div>
+  </div>
+  <footer style="color:black" class="footer bg-secondary fixed-bottom">
+    <p style="text-align:center;">@Copyright 2022-23. All rights reserved. </p>
+  
+    </footer>

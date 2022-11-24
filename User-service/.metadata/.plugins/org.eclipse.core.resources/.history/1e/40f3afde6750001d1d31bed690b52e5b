@@ -1,0 +1,26 @@
+package com.Day8DepartmentService.model;
+
+import javax.persistence.Entity;
+
+import ch.qos.logback.core.joran.spi.NoAutoStart;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Data
+@AllArgsConstructor
+@Entity
+@NoArgsConstructor
+public class Department {
+	
+	private long deptId;
+	private String deptName;
+
+	private String deptAddress;
+
+	private String deptCode;
+
+
+}

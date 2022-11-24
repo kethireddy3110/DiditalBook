@@ -1,0 +1,44 @@
+package com.Day8DepartmentService.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+import com.Day8DepartmentService.model.Department;
+import com.Day8DepartmentService.service.DepartService;
+
+import lombok.extern.slf4j.Slf4j;
+
+@RestController
+@RequestMapping("/department")
+@Slf4j
+
+public class DepartmentController {
+
+	@Autowired
+	private DepartService departService;
+
+//		@Autowired
+//		private RestTemplate restTemplate;
+
+	@PostMapping("/")
+	public Department saveDepartment(@RequestBody Department department) {
+		log.info("Inside save department");
+
+		return departService.saveDepartment(department);
+	}
+
+	@GetMapping("/{id}")
+	public Department getDepartment(@PathVariable Long deptId) {
+		log.info("Inside get department");
+
+		return departService.findDepartmentByID(deptId);
+	}
+}

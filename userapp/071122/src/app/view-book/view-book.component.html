@@ -1,0 +1,69 @@
+  
+<div class="bootstrap-wrapper big-banner text-light full-height">
+  <div style="margin-top: 25px;" class="container col-md-7 margin-t text-center text-light ">
+  <div class="container">
+  <h2>Book </h2>
+  <p>Enjoy reading</p>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Logo</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <tr>
+        <td>  <img src="{{book.logo}}" height="100" width="100"></td>   
+      </tr>
+    </tbody>
+  </table>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Book ID</th>
+        <th scope="col">Book title</th>
+        <th scope="col">Author</th>
+        <th scope="col">Category</th>
+        <th scope="col">Publisher</th>
+        <th scope="col">Active</th>
+        <th scope="col">Published date</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>{{book.authorId}}</th> 
+       <td>{{book.bookTitle}}</td>
+       <td>{{book.author}}</td>
+       <td>{{book.category}}</td>
+       <td>{{book.publisher}}</td>
+       <td>{{book.active}}</td>
+       <td>{{book.publishedDate}}</td>    
+       <td>{{book.price}}</td>      
+      </tr>
+    </tbody>
+    
+  </table>
+
+    <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Chapter</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <tr>
+        <td>{{book.chapter}}</td>   
+      </tr>
+    </tbody>
+  </table>
+ <button type="button" class="btn btn-success" (click)="gotoList()">Back</button>
+</div>
+</div>
+</div>
+<footer style="color:black" class="footer bg-secondary fixed-bottom">
+    
+  <p style="text-align:center;">@Copyright 2022-23. All rights reserved. </p>
+
+  </footer>
